@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 public class EnrichedUserController {
 
     private EnrichedUserService enrichedUserService;
@@ -22,7 +22,7 @@ public class EnrichedUserController {
         this.enrichedUserService = enrichedUserService;
     }
 
-    @GetMapping(value="/enriched-users", produces={"application/json"})
+    @GetMapping(value="/users", produces={"application/json"})
     public ResponseEntity<List<EnrichedUserDTO>> getAllEnrichedUsers(){
         return new ResponseEntity<>(
                 enrichedUserService.getAllEnrichedUsers(),
@@ -30,7 +30,7 @@ public class EnrichedUserController {
         );
     }
 
-    @PostMapping(value="/enriched-users", produces={"application/json"}, consumes={"application/json"})
+    @PostMapping(value="/users", produces={"application/json"}, consumes={"application/json"})
     public ResponseEntity<EnrichedUserCreationResponseDTO> addEnrichedUser(
             @Valid @RequestBody EnrichedUserCreationDTO enrichedUserCreationDTO
             ){
