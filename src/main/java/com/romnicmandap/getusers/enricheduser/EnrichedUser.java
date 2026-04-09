@@ -86,13 +86,4 @@ public class EnrichedUser {
                 '}';
     }
 
-    /*
-id
-name -> c255, not blank
-email -> valid format, 255, not blank
-department -> 255, not blank
-lastUpdated -> time of creation
-
- */
-
 }
