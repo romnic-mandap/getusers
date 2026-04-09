@@ -32,7 +32,7 @@ public class EnrichedUserController {
 
     @PostMapping(value="/enriched-users", produces={"application/json"}, consumes={"application/json"})
     public ResponseEntity<EnrichedUserCreationResponseDTO> addEnrichedUser(
-            @RequestBody @Valid EnrichedUserCreationDTO enrichedUserCreationDTO
+            @Valid @RequestBody EnrichedUserCreationDTO enrichedUserCreationDTO
             ){
         return new ResponseEntity<>(
                 new EnrichedUserCreationResponseDTO(
